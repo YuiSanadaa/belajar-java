@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Hotel</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+<h1>Form Hotel</h1>
+<br/>
+<form th:action="@{/hotel/saveForm}" method="post" th:object="${hotel}">
+<input type="hidden" th:field="*{id}">
+<label>Nama Hotel :</label><br/><br/>
+<input type="text" th:field="*{nama_hotel}"><br/>
+<label>Akreditas Hotel :</label><br/><br/>
+<input type="text" th:field="*{hotel_bintang}"><br/>
+<label>No Telp :</label><br/><br/>
+<input type="text" th:field="*{no_telp}"><br/>
+<label>Alamat</label><br/><br/>
+<textarea th:field="*{alamat}" ></textarea><br/>
+<button type="submit">Simpan</button>
+</form>
+<br/><br/>
+</body>
+</html>

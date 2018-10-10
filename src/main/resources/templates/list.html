@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Hotel</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+    <h1>List Hotel</h1>
+    <br/>
+    <a th:href="@{/hotel/form}">Tambah Hotel</a>
+    <br/><br/>
+    <table border="1">
+    <thead>
+    <tr>
+        <th>Nama</th>
+        <th>Akreditas</th>
+        <th>No Telp</th>
+        <th>Alamat</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <!--/*@thymesVar id="listHotel" type=""*/-->
+    <tr th:each="m:${listHotel}">
+    <td th:text="${m.nama_hotel}"></td>
+        <td th:text="${m.hotel_bintang}"></td>
+        <td th:text="${m.no_telp}"></td>
+        <td th:text="${m.alamat}"></td>
+    <td>
+        <a th:href="@{/hotel/form(id=${m.id})}">Edit</a>
+            <a th:href="@{/hotel/deleteHotel(id=${m.id})}">Delete</a>
+    </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

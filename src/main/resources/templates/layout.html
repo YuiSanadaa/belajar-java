@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:include="fragments/head :: head" th:remove="tag">Head</div>
+    <div th:include="fragments/javascript :: script" th:remove="tag">Script</div>
+</head>
+<body>
+    <div class="page">
+        <div th:include="fragments/header :: header" th:remove="tag">Main Navbar</div>
+        <div class="page-content d-flex align-items-stretch">
+            <div th:include="fragments/navbar :: navbar" th:remove="tag">Navbar</div>
+            <div class="content-inner" layout:fragment="content">
+
+            </div>
+</body>
+</html>
